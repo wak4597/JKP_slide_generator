@@ -161,7 +161,7 @@ def generate_pptx(parsed_data, template_buffer):
                     p.text = f"{status} ({len(facilities)}):"
                     p.font.bold = True
                     p.font.size = Pt(18)
-                    p.font.color.rgb = None # Inherit from template
+                    # NOTE: Removed the font color override here so it doesn't cause RGBColor errors
                     
                     # Add Facility Items
                     for idx, facility in enumerate(facilities, 1):
